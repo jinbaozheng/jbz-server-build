@@ -26,7 +26,7 @@ const _get_args = (arg) => {
     return '';
 }
 
-const project_path = _get_args('--path') ? path.resolve(__dirname, _get_args('--path')) : path.resolve(__dirname, './');
+const project_path =  path.resolve(process.cwd(), _get_args('--path') || './');
 process.chdir(project_path);
 
 const _do_command = (command, args, options, mark) => {
@@ -65,7 +65,7 @@ const _do_command = (command, args, options, mark) => {
 
 if (_is_exist_flags(['-h'])){
     console.log(`
-    Usage: node path/to/build-dist.js [COMMAND] [options] [args] 
+    Usage: jbz-server-build [COMMAND] [options] [args] 
     Commands:
       beta         打包测试版本
       pro          打包生产版本
