@@ -3,8 +3,20 @@
 /* eslint-disable */
 const spawn = require('child_process').spawn;
 const path = require('path');
+const fs = require('fs');
 const args = process.argv.splice(2) || [];
 const exit = process.exit;
+let chalk = null;
+
+try{
+    chalk = require('chalk');
+} catch (e) {
+    chalk = {
+        red: d => d,
+        green: d => d
+    }
+}
+
 
 const _is_exist_flags = (flags) => {
     if (typeof flags === 'string'){
@@ -85,9 +97,11 @@ if (_is_exist_flags(['-h'])){
     exit()
 }
 
-
 (async function run_command() {
     try {
+        if(!fs.existsSync(path.resolve(project_path, './package.json'))){
+            throw new Error(`Error: package.json file not found in directory - ${project_path} , please cd to i-*-film's root directory.`);
+        }
         const options = {
             cmd: {
                 cwd: project_path
@@ -122,7 +136,7 @@ if (_is_exist_flags(['-h'])){
             await _do_command('npm', ['run', 'smart-build-pro'], options)
         }
     } catch (e) {
-        console.log(e);
+        console.log(chalk.red(e.message));
         exit(-1)
     }
 })()

@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "bin" : {
-    "jbz-server-build" : "/bin/index.js"
+  "bin": {
+    "jbz-server-build": "/bin/index.js"
   },
   "repository": {
     "url": "git@github.com:jinbaozheng/jbz-oss-tool.git",
@@ -17,5 +17,8 @@
     "registry": "https://registry.npmjs.org/"
   },
   "author": "cuppi",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.1"
+  }
 }
