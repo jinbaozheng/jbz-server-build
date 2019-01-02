@@ -1,13 +1,13 @@
 {
   "name": "jbz-server-build",
-  "version": "1.0.0-beta1",
+  "version": "1.0.0-beta5",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "jbz-server-build": "/bin/index.js"
+    "jbz-server-build": "./bin/index.js"
   },
   "repository": {
     "url": "git@github.com:jinbaozheng/jbz-oss-tool.git",
@@ -16,8 +16,12 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
+  "engines": {
+    "node": ">=7"
+  },
   "author": "cuppi",
   "license": "ISC",
+  "preferGlobal": true,
   "dependencies": {
     "chalk": "^2.4.1"
   }

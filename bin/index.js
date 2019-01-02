@@ -77,7 +77,7 @@ const _do_command = (command, args, options, mark) => {
 
 if (_is_exist_flags(['-h'])){
     console.log(`
-    Usage: jbz-server-build [COMMAND] [options] [args] 
+    Usage: jbz-server-build [COMMAND] [Options] [args] 
     Commands:
       beta         打包测试版本
       pro          打包生产版本
@@ -86,7 +86,7 @@ if (_is_exist_flags(['-h'])){
       install      安装依赖包
   
     Options:
-    --uninstall    不进行安装依赖包
+      --uninstall    不进行安装依赖包
     
     args:
       path         项目路径
