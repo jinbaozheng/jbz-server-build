@@ -11,18 +11,18 @@ A cli for make bundle more happy and more comfortable.
 
 ## Getting Started
 First thing's first, install the environment:
-###node
+### node
 It is good way to install node by package manager, for [yum]: 
 ```bash
 sudo yum install nodejs 
 ```
 > Note: since cli USES the es7 feature, you need to install a later version of 8.0.0 for node. 
-###yarn
+### yarn
 [yarn] is a fast, reliable, and secure dependency management:
 ```bash
 npm install yarn -g
 ```
-###other
+### other
 ```json
 "scripts": {
     "smart-build-beta": "jbz-oss-build beta",
