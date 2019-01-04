@@ -42,10 +42,10 @@ const project_path =  path.resolve(process.cwd(), _get_args('--path') || './');
 process.chdir(project_path);
 
 const _do_command = (command, args, options, mark) => {
-    let {no_error} = {
-        no_error: true,
-        ...mark
-    }
+    let {ignore_error, stderr_is_ok} = Object.assign({}, {
+        ignore_error: false,
+        stderr_is_ok: d => false
+    }, mark)
     return new Promise((resolve, reject) => {
         let h = spawn(command, args, options, (error, stdout, stderr) => {
             if (error) {
@@ -61,7 +61,9 @@ const _do_command = (command, args, options, mark) => {
         });
 
         h.stderr.on('data', (err) => {
-            success = !no_error || false;
+            if (!ignore_error){
+                success = stderr_is_ok(err.toString());
+            }
             process.stdout.write(`stderr: ${err}`);
         });
 
@@ -110,7 +112,7 @@ if (_is_exist_flags(['-h'])){
 
         if (!args || args.length <= 0){
             await _do_command('yarn', [], options, {
-                no_error: false
+                ignore_error: true
             });
             exit();
         }
@@ -124,7 +126,7 @@ if (_is_exist_flags(['-h'])){
 
         if (_is_exist_flags(['beta', 'pro', 'install', 'all']) && !_is_exist_flags('--uninstall')){
             await _do_command('yarn', [], options, {
-                no_error: false
+                ignore_error: true
             });
         }
 
