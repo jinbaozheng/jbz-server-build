@@ -1,6 +1,6 @@
 {
   "name": "jbz-server-build",
-  "version": "1.0.1-beta2",
+  "version": "1.0.1-beta3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=8"
   },
   "author": "cuppi",
   "license": "ISC",

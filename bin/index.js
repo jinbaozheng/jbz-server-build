@@ -42,10 +42,11 @@ const project_path =  path.resolve(process.cwd(), _get_args('--path') || './');
 process.chdir(project_path);
 
 const _do_command = (command, args, options, mark) => {
-    let {ignore_error, stderr_is_ok} = Object.assign({}, {
+    let {ignore_error, stderr_is_ok} = {
         ignore_error: false,
-        stderr_is_ok: d => false
-    }, mark)
+        stderr_is_ok: d => false,
+        ...mark
+    }
     return new Promise((resolve, reject) => {
         let h = spawn(command, args, options, (error, stdout, stderr) => {
             if (error) {
