@@ -76,7 +76,7 @@ jbz-server-build beta --path='path/to/project'
 
 ### source
 
-Sometimes, you just just want a simple file to do everything thing packaging process,
+Sometimes, you just want a simple file to do everything in packaging process,
 Therefore, you can use the source file to do.
 ```bash
 git clone git@github.com:jinbaozheng/jbz-server-build.git
