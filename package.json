@@ -1,6 +1,6 @@
 {
   "name": "jbz-server-build",
-  "version": "1.0.0-beta5",
+  "version": "1.0.1-beta2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -17,12 +17,15 @@
     "registry": "https://registry.npmjs.org/"
   },
   "engines": {
-    "node": ">=7"
+    "node": ">=6"
   },
   "author": "cuppi",
   "license": "ISC",
   "preferGlobal": true,
   "dependencies": {
     "chalk": "^2.4.1"
+  },
+  "peerDependencies": {
+    "jbz-oss-tool": ""
   }
 }
