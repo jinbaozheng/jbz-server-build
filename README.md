@@ -1,5 +1,7 @@
 [yum]: http://yum.baseurl.org/wiki/
 [yarn]:  https://yarnpkg.com/
+[ci-img]:  https://travis-ci.org/cuppi/postcss-ketchup.svg
+[ci]:      https://travis-ci.org/cuppi/postcss-ketchup
 [npx]:   https://github.com/zkat/npx
 [CSS]:     https://developer.mozilla.org/zh-CN/docs/Web/CSS
 [Icon]:    http://i-film-beta.oss-cn-shanghai.aliyuncs.com/framework/postcss-ketchup/ketch-icon.png
