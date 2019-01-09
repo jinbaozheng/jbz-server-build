@@ -96,6 +96,7 @@ if (_is_exist_flags(['-h'])){
       
     Aliases: 
       -    install
+      
   `)
     exit()
 }
@@ -140,7 +141,7 @@ if (_is_exist_flags(['-h'])){
         }
     } catch (e) {
         console.log(chalk.red(e.message));
-        exit(-1)
+        exit(1)
     }
 })()
 
