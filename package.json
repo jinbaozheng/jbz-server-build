@@ -1,6 +1,6 @@
 {
   "name": "jbz-server-build",
-  "version": "1.0.1-beta3",
+  "version": "1.0.1-beta4",
   "description": "",
   "main": "index.js",
   "scripts": {
