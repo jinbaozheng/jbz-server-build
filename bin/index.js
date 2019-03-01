@@ -89,7 +89,8 @@ if (_is_exist_flags(['-h'])){
       install      安装依赖包
   
     Options:
-      --uninstall    不进行安装依赖包
+      --uninstall     不进行安装依赖包
+      --make-lockfile 生成锁文件
     
     args:
       path         项目路径
@@ -113,7 +114,11 @@ if (_is_exist_flags(['-h'])){
         };
 
         if (!args || args.length <= 0){
-            await _do_command('yarn', [], options, {
+            let params = ['install']
+            if (!_is_exist_flags('--make-lockfile')){
+                params = ['install', '--pure-lockfile']
+            }
+            await _do_command('yarn', params, options, {
                 ignore_error: true
             });
             exit();
@@ -127,7 +132,11 @@ if (_is_exist_flags(['-h'])){
         }
 
         if (_is_exist_flags(['beta', 'pro', 'install', 'all']) && !_is_exist_flags('--uninstall')){
-            await _do_command('yarn', [], options, {
+            let params = ['install']
+            if (!_is_exist_flags('--make-lockfile')){
+                params = ['install', '--pure-lockfile']
+            }
+            await _do_command('yarn', params, options, {
                 ignore_error: true
             });
         }
