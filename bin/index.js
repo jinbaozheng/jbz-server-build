@@ -105,7 +105,7 @@ if (_is_exist_flags(['-h'])){
 (async function run_command() {
     try {
         if(!fs.existsSync(path.resolve(project_path, './package.json'))){
-            throw new Error(`Error: package.json file not found in directory - ${project_path} , please cd to i-*-film's root directory.`);
+            throw new Error(`Error: package.json file not found in directory - ${project_path} , please cd to [i-*-project]'s root directory.`);
         }
         const options = {
             cmd: {

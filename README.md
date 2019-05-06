@@ -4,7 +4,6 @@
 [ci]:      https://travis-ci.org/cuppi/postcss-ketchup
 [npx]:   https://github.com/zkat/npx
 [CSS]:     https://developer.mozilla.org/zh-CN/docs/Web/CSS
-[Icon]:    http://i-film-beta.oss-cn-shanghai.aliyuncs.com/framework/postcss-ketchup/ketch-icon.png
 [postcss-loader]: https://github.com/postcss/postcss-loader
 # jbz-server-build [![Build Status][ci-img]][ci]
 A cli for make bundle more happy and more comfortable.
